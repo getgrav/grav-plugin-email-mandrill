@@ -1,7 +1,7 @@
 name: Email Mandrill
 slug: email-mandrill
 type: plugin
-version: 1.0.0-rc.2
+version: 1.0.0-rc.3
 testing: true
 description: Mandrill/Mailchimp integration for new Email plugin
 icon: envelope

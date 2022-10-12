@@ -52,9 +52,9 @@ class EmailMandrillPlugin extends Plugin
             $options = $this->config->get('plugins.email-mandrill');
             $dsn = "mandrill+{$options['transport']}://";
             if ($options['transport'] === 'smtp') {
-                $dsn .= urlencode($options['username']) .":".urlencode($options['password']);
+                $dsn .= urlencode($options['username'] ?? '') .":".urlencode($options['password'] ?? '');
             } else {
-                $dsn .= urlencode($options['access_key']);
+                $dsn .= urlencode($options['access_key'] ?? '');
             }
             $dsn .= "@default";
             $e['dsn'] = $dsn;
