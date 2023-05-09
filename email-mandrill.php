@@ -50,7 +50,8 @@ class EmailMandrillPlugin extends Plugin
         $engine = $e['engine'];
         if ($engine === 'mandrill') {
             $options = $this->config->get('plugins.email-mandrill');
-            $dsn = "mandrill+{$options['transport']}://";
+            $transport = $options['transport'] ?? 'api';
+            $dsn = "mandrill+{$transport}://";
             if ($options['transport'] === 'smtp') {
                 $dsn .= urlencode($options['username'] ?? '') .":".urlencode($options['password'] ?? '');
             } else {
